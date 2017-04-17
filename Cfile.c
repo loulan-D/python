@@ -17,7 +17,7 @@
 #include <stdlib.h>
 int main()
 {
-    char name,feedback;
+    char name[30],feedback;
     int pass,num,num1,num2,num3,money,rmb=1000;
     printf("程序：一个简单的小程序\n");
     printf("版本：version1\n");
@@ -29,10 +29,10 @@ int main()
     do{
         printf("\t\t\t\t欢迎光临******银行\t\t\t\t\n");
         printf("请输入用户名:\n");
-        scanf(" %c",&name);
+        scanf("%s",name);
         printf("请输入密码：\n");
         scanf("%d",&pass);
-        printf("USERNAME:%c\t\nPASSWORD:******\n",name);
+        printf("USERNAME:%s\t\nPASSWORD:******\n",name);
         printf("---------------------\n");
         printf("正在读卡，请稍等..............\n");
 
@@ -42,7 +42,7 @@ int main()
             {
             case 1:
                 printf("您的账户信息为：\n");
-                printf("用户名：%c\n开户日期：2017/04/17\n开户银行:中国****银行河北分行\n账户余额：%dRMB\n",name,rmb);
+                printf("用户名：%s\n开户日期：2017/04/17\n开户银行:中国****银行河北分行\n账户余额：%dRMB\n",name,rmb);
                 printf("---------------------\n");
                 printf("按5退卡\t按0返回上一层\n");
                 scanf("%d",&num1);
@@ -54,7 +54,7 @@ int main()
             case 2:
                 printf("请输入你的存款金额:\n");
                 scanf("%d",&money);
-                printf("你当前的账户余额为:%d\n",rmb+money);
+                printf("你当前的账户余额为:%d\n",rmb += money);
                 printf("---------------------\n");
                 printf("按5退卡\t按0返回上一层\n");
                 scanf("%d",&num1);
@@ -66,7 +66,7 @@ int main()
             case 3:
                 printf("请输入您的取款金额:\n");
                 scanf("%d",&money);
-                printf("你当前的账户余额为:%d\n",rmb-money);
+                printf("你当前的账户余额为:%d\n",rmb -= money);
                 printf("---------------------\n");
                 printf("按5退卡\t按0返回上一层\n");
                 scanf("%d",&num1);
@@ -86,7 +86,7 @@ int main()
                 case 1:
                     printf("请输入你要转取的金额\n");
                     scanf("%d",&money);
-                    printf("您当前的账户余额为%d\n",rmb-money);
+                    printf("您当前的账户余额为%d\n",rmb -= money);
                     printf("按5退卡\t按0返回上一层\n");
                     scanf("%d",&num1);
                     if (num1 == 0)
@@ -97,7 +97,7 @@ int main()
                 case 2:
                     printf("请输入你要转取的金额\n");
                     scanf("%d",&money);
-                    printf("您当前的账户余额为%d\n",rmb-money);
+                    printf("您当前的账户余额为%d\n",rmb -= money);
                     printf("按5退卡\t按0返回上一层\n");
                     scanf("%d",&num1);
                     if (num1 == 0)
@@ -108,7 +108,7 @@ int main()
                 case 3:
                     printf("请输入你要转取的金额\n");
                     scanf("%d",&money);
-                    printf("您当前的账户余额为%d\n",rmb-money);
+                    printf("您当前的账户余额为%d\n",rmb -= money);
                     printf("按5退卡\t按0返回上一层\n");
                     scanf("%d",&num1);
                     if (num1 == 0)
